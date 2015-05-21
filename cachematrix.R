@@ -1,10 +1,10 @@
-## Put comments here that give an overall description of what your
+## Making my first comment to test that Git is working correctly...
 ## functions do
 
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
-
+y << x
 }
 
 
