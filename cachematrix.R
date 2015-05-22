@@ -1,16 +1,27 @@
 ## This pair of functions will create the inverse of a matrix 
-## using the solve function.  To save time building the data, 
-## we will store intermediate values in a cache (an environment 
-## outside of the function loop) by using the << operator, and 
-## reading from the cache if there is a value there.
+## using the solve function, but will save time building the data 
+## by storing intermediate values in a cache using the << operator
+
+
 
 ## Function takes a matrix as argument and returns a list 
 ## of function names that set and get the value of the
 ## matrix and its inverse in the cache.
 
 makeCacheMatrix <- function(x = matrix()) {
-     
-}
+      m <- NULL
+      set <- function(y) {
+            x <<- y
+            m <<- NULL
+      }
+      get <- function() x
+      setinversem <- function(inverse) m <<- inverse
+      getinversem <- function() m
+      list(set = set, get = get,
+           setinversem = setinversem,
+           getinversem = getinversem)
+}     
+
 
 
 ## Function takes the returned list of makeCacheMatrix as argument,  
