@@ -29,5 +29,13 @@ makeCacheMatrix <- function(x = matrix()) {
 ## using solve(). When the cache has a value, it reads from there.
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+      m <- x$getinversem()
+      if(!is.null(m)) {
+            message("getting cached data")
+            return(m)
+      }
+      data <- x$get()
+      m <- solve(data, ...)
+      x$setinversem(m)
+      m
 }
